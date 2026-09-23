@@ -249,7 +249,7 @@ Somehow, we've been making memories for a very long time.
 st.image(
     "childhood1.jpeg",
     caption="Little us ♡",
-    use_container_width=True
+    width="stretch"
 )
 
 st.markdown("""
@@ -263,7 +263,7 @@ And look at those tiny faces...
 st.image(
     "childhood2.jpeg",
     caption="And then there was this ♡",
-    use_container_width=True
+    width="stretch"
 )
 
 st.markdown("""
