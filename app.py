@@ -2,6 +2,7 @@ import streamlit as st
 import time
 
 # ---------------- PAGE SETTINGS ----------------
+
 st.set_page_config(
     page_title="For Chidka Boka ♡",
     page_icon="🌷",
@@ -9,34 +10,48 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+
 # ---------------- CUSTOM CSS ----------------
+
 st.markdown("""
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500&display=swap');
 
 .stApp {
-    background: linear-gradient(180deg, #fff8f5 0%, #f9e9e5 50%, #fff8f5 100%);
-    color: #493c3a;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(170,125,90,0.08), transparent 30%),
+        #eadbc5;
+    color: #5b4438;
 }
 
 .block-container {
-    max-width: 700px;
+    max-width: 850px;
     padding: 2rem 1rem 4rem 1rem;
 }
 
-/* Main headings */
+
+/* ---------------- HEADINGS ---------------- */
+
 h1, h2, h3 {
-    font-family: 'DM Serif Display', serif !important;
-    color: #6d4c4c !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    color: #68483d !important;
+    letter-spacing: 1px;
 }
 
-/* Normal text */
+
+/* ---------------- NORMAL TEXT ---------------- */
+
 p, li {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #654d42;
+    line-height: 1.7;
 }
 
-/* Hero */
+
+/* ---------------- HERO ---------------- */
+
 .hero {
     text-align: center;
     padding: 50px 15px 35px 15px;
@@ -48,92 +63,178 @@ p, li {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .hero h1 {
-    font-size: 52px !important;
-    margin-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 58px !important;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    color: #68483d !important;
 }
 
 .subtitle {
-    font-size: 16px;
-    color: #8b7070;
-    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #85675a;
+    letter-spacing: 1.5px;
 }
 
-/* Cards */
-.card {
-    background: rgba(255,255,255,0.72);
-    border: 1px solid #ead7d2;
-    border-radius: 22px;
-    padding: 25px;
-    margin: 20px 0;
-    box-shadow: 0 8px 25px rgba(120, 80, 80, 0.08);
+.date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #98705d;
+    letter-spacing: 3px;
 }
+
+
+/* ---------------- VINTAGE CARDS ---------------- */
+
+.card {
+    background:
+        linear-gradient(
+            rgba(255,250,239,0.90),
+            rgba(247,236,216,0.94)
+        );
+
+    border: 1px solid rgba(120,85,62,0.25);
+    border-radius: 5px;
+    padding: 28px;
+    margin: 20px 0;
+
+    box-shadow:
+        0 5px 15px rgba(78,52,35,0.10),
+        inset 0 0 25px rgba(139,102,70,0.05);
+}
+
+
+/* ---------------- LETTER ---------------- */
 
 .letter {
-    background: #fffdfb;
-    border-radius: 18px;
-    padding: 28px 22px;
+    background: #fff9ec;
+    border: 1px solid #cdb79d;
+    border-radius: 3px;
+    padding: 30px 25px;
     line-height: 1.9;
-    border: 1px solid #eadbd6;
-    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #5f493d;
+
+    box-shadow:
+        0 5px 15px rgba(80,55,40,0.10);
 }
 
-/* Buttons */
-.stButton > button {
+
+/* ---------------- BUTTONS ---------------- */
+
+.stButton > button,
+.stLinkButton > a {
     width: 100%;
-    border-radius: 30px;
-    border: 1px solid #d9bdb8;
-    background-color: #f4dcd8;
-    color: #604747;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 3px !important;
+
+    border: 1px solid #654438 !important;
+
+    background-color: #7b5548 !important;
+    color: #fff8ed !important;
+
+    font-family: 'Montserrat', sans-serif !important;
     font-weight: 500;
-    padding: 12px;
-    transition: 0.3s;
+
+    letter-spacing: 0.5px;
+
+    padding: 12px !important;
+
+    transition: all 0.3s ease;
 }
 
-.stButton > button:hover {
-    background-color: #eac8c2;
-    border-color: #cdaaa4;
+.stButton > button:hover,
+.stLinkButton > a:hover {
+    background-color: #624238 !important;
+    transform: translateY(-2px);
 }
 
-/* Divider */
+
+/* ---------------- DIVIDER ---------------- */
+
 .divider {
     text-align: center;
-    color: #c59d97;
-    font-size: 20px;
-    margin: 35px 0;
+
+    color: #9b705e;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    margin: 30px 0;
 }
 
-/* Footer */
+.divider::before,
+.divider::after {
+    content: " ─── ";
+    color: #b18a72;
+}
+
+
+/* ---------------- IMAGES ---------------- */
+
+img {
+    border: 7px solid #f8efdf;
+
+    box-shadow:
+        0 5px 15px rgba(70,45,30,0.18);
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
 .footer {
     text-align: center;
-    color: #987c78;
+
+    color: #806254;
+
+    font-family: 'Montserrat', sans-serif;
+
     font-size: 13px;
+
     margin-top: 50px;
 }
 
-/* Mobile */
+
+/* ---------------- MOBILE ---------------- */
+
 @media (max-width: 600px) {
 
     .block-container {
         padding: 1rem 0.8rem 3rem 0.8rem;
     }
 
-    .hero h1 {
-        font-size: 40px !important;
-    }
-
     .hero {
         padding-top: 30px;
     }
 
+    .hero h1 {
+        font-size: 42px !important;
+    }
+
     .card {
         padding: 20px;
+    }
+
+    .letter {
+        padding: 23px 18px;
+        font-size: 17px;
     }
 
 }
@@ -142,20 +243,25 @@ p, li {
 """, unsafe_allow_html=True)
 
 
-# ---------------- HERO ----------------
+# ============================================================
+# HERO
+# ============================================================
 
 st.markdown("""
 <div class="hero">
 
 <div class="flower">🌷</div>
 
-<h1>Happy Birthday,<br>Chidka Boka ♡</h1>
+<h1>
+Happy Birthday,<br>
+Chidka Boka ♡
+</h1>
 
 <p class="subtitle">
 A little something made just for you
 </p>
 
-<p style="font-size:14px; color:#9b7d79;">
+<p class="date">
 30 • 09 • 2006
 </p>
 
@@ -163,7 +269,9 @@ A little something made just for you
 """, unsafe_allow_html=True)
 
 
-# ---------------- OPEN BUTTON ----------------
+# ============================================================
+# OPEN BUTTON
+# ============================================================
 
 if st.button("🎁 Open Your Surprise"):
 
@@ -193,9 +301,14 @@ if st.button("🎁 Open Your Surprise"):
     """, unsafe_allow_html=True)
 
 
-# ---------------- OUR STORY ----------------
+# ============================================================
+# OUR STORY
+# ============================================================
 
-st.markdown('<div class="divider">♡ · ♡ · ♡</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="divider">♡ · ♡ · ♡</div>',
+    unsafe_allow_html=True
+)
 
 st.header("Our Little Story 🌷")
 
@@ -226,7 +339,9 @@ of some of those feelings.
 """, unsafe_allow_html=True)
 
 
-# ---------------- MEMORIES ----------------
+# ============================================================
+# MEMORIES
+# ============================================================
 
 st.header("Little Memories 📸")
 
@@ -245,7 +360,8 @@ Somehow, we've been making memories for a very long time.
 """, unsafe_allow_html=True)
 
 
-# First childhood picture
+# ---------------- FIRST CHILDHOOD PHOTO ----------------
+
 st.image(
     "childhood1.jpeg",
     caption="Little us ♡",
@@ -253,13 +369,14 @@ st.image(
 )
 
 st.markdown("""
-<p style="text-align:center; color:#987c78; font-style:italic;">
+<p style="text-align:center; color:#806254; font-style:italic;">
 And look at those tiny faces...
 </p>
 """, unsafe_allow_html=True)
 
 
-# Second childhood picture
+# ---------------- SECOND CHILDHOOD PHOTO ----------------
+
 st.image(
     "childhood2.jpeg",
     caption="And then there was this ♡",
@@ -282,7 +399,9 @@ would become memories we'd look back on someday.
 """, unsafe_allow_html=True)
 
 
-# ---------------- LETTER ----------------
+# ============================================================
+# LETTER
+# ============================================================
 
 st.header("A Letter For You 💌")
 
@@ -325,7 +444,9 @@ With love,<br>
 """, unsafe_allow_html=True)
 
 
-# ---------------- THINGS ABOUT HIM ----------------
+# ============================================================
+# THINGS ABOUT HIM
+# ============================================================
 
 st.header("A Few Things About You ♡")
 
@@ -346,13 +467,17 @@ for i, thing in enumerate(things, 1):
     {i:02d}
     </h3>
 
-    <p>{thing}</p>
+    <p>
+    {thing}
+    </p>
 
     </div>
     """, unsafe_allow_html=True)
 
 
-# ---------------- PLAYLIST ----------------
+# ============================================================
+# PLAYLIST
+# ============================================================
 
 st.header("A Song For You 🎧")
 
@@ -363,7 +488,7 @@ st.markdown("""
 🎵 Hum Tere Pyaar Mein
 </p>
 
-<p style="text-align:center; color:#987c78;">
+<p style="text-align:center; color:#806254;">
 Lata Mangeshkar
 </p>
 
@@ -380,9 +505,14 @@ st.link_button(
 )
 
 
-# ---------------- FINAL SURPRISE ----------------
+# ============================================================
+# FINAL SURPRISE
+# ============================================================
 
-st.markdown('<div class="divider">♡ · ♡ · ♡</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="divider">♡ · ♡ · ♡</div>',
+    unsafe_allow_html=True
+)
 
 st.header("One Last Thing 🎁")
 
@@ -391,9 +521,13 @@ if st.button("💗 Click Me"):
     st.markdown("""
     <div class="card" style="text-align:center;">
 
-    <div style="font-size:50px;">🌷</div>
+    <div style="font-size:50px;">
+    🌷
+    </div>
 
-    <h2>Happy Birthday, Chidka Boka ♡</h2>
+    <h2>
+    Happy Birthday, Chidka Boka ♡
+    </h2>
 
     <p>
     I hope this year brings you lots of happiness,
@@ -416,12 +550,14 @@ if st.button("💗 Click Me"):
     """, unsafe_allow_html=True)
 
 
-# ---------------- FOOTER ----------------
+# ============================================================
+# FOOTER
+# ============================================================
 
 st.markdown("""
 <div class="footer">
 
-Made with ♡ by Shrads<br>
+Made with ♡ by Shrads
 
 </div>
 """, unsafe_allow_html=True)
